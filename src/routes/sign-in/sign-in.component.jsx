@@ -6,7 +6,7 @@ import {
 } from '../../utils/firebase/firebase.utils';
 
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
-
+import SignInForm from '../../components/sign-in/sign-in-form.component';
 
 const SignIn = () => {
 
@@ -17,10 +17,11 @@ const SignIn = () => {
 
   return (
     <div>
-      <h1>Sign In Page</h1>
+      {/* <h1>Sign In Page</h1>
       <button onClick={logGoogleUser}>
         Sign in with Google Popup
-      </button>
+      </button> */}
+      <SignInForm />
       <SignUpForm />
     </div>
   );
