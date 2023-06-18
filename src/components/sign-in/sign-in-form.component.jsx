@@ -1,70 +1,78 @@
-// import { useState } from "react";
+import { useState } from "react";
 
-// import FormInput from "../form-input/form-input.component";
-// import Button from "../button/button.component";
+import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 
-// const defaultFormFields = {
-//   email: '',
-//   password: '',
-// }
+import './sign-in-form.styles.scss';
 
-// const SignInForm = () => {
-//   const [formFields, setFormFields] = useState(defaultFormFields);
-//   const { email, password } = formFields;
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth
+} from '../../utils/firebase/firebase.utils';
 
-//   const resetFormFields = () => {
-//     setFormFields(defaultFormFields);
-//   }
+const defaultFormFields = {
+  email: '',
+  password: '',
+}
 
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
+const SignInForm = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
 
-//     // try {
-//     //   const { user } = await createAuthUserWithEmailAndPassword(email, password);
-//     //   await createUserDocumentFromAuth(user, { displayName });
-//     //   resetFormFields();
-//     // } catch (error) {
-//     //   if (error.code === 'auth/email-already-in-use') {
-//     //     alert('Cannot create user, email already in use');
-//     //   } else {
-//     //     console.log('user creation encountered an error: ', error)
-//     //   }
-//     // }
-//   }
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  }
 
-//   const handleChange = (event) => {
-//     const { name, value } = event.target;
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  }
 
-//     setFormFields({...formFields, [name]: value})
-//   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-//   return (
-//     <div className="sign-in-container">
-//       <h2>I already have an account</h2>
-//       <span>Sign in with your email or password</span>
-//       <form onSubmit={handleSubmit}>
-//         <FormInput 
-//           label="Email"
-//           type="email" 
-//           onChange={handleChange} 
-//           name="email" 
-//           value={email}
-//           required 
-//         />
-//         <FormInput 
-//           label="Password"
-//           type="password" 
-//           onChange={handleChange} 
-//           name="password" 
-//           value={password}
-//           required
-//         />
-//         <Button type="submit">Sign In</Button>
-//         <Button type="submit" className="">Sign In With Google</Button>
-//       </form>
-//     </div>
-//   )
+    try {
 
-// }
+    } catch (error) {
 
-// export default SignInForm;
+    }
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormFields({...formFields, [name]: value})
+  }
+
+  return (
+    <div className="sign-in-container">
+      <h2>Already have an account?</h2>
+      <span>Sign in with your email or password</span>
+      <form onSubmit={handleSubmit}>
+        <FormInput 
+          label="Email"
+          type="email" 
+          onChange={handleChange} 
+          name="email" 
+          value={email}
+          required 
+        />
+        <FormInput 
+          label="Password"
+          type="password" 
+          onChange={handleChange} 
+          name="password" 
+          value={password}
+          required
+        />
+        <div className="buttons-container">
+          <Button type="submit">Sign In</Button>
+          <Button buttonType='google' onClick={signInWithGoogle}>Sign In With Google</Button>
+        </div>
+      </form>
+    </div>
+  )
+
+}
+
+export default SignInForm;
