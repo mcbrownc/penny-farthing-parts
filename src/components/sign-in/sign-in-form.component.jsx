@@ -7,7 +7,8 @@ import './sign-in-form.styles.scss';
 
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth
+  createUserDocumentFromAuth,
+  signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
 
 const defaultFormFields = {
@@ -32,7 +33,9 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-
+      const response = await signInAuthUserWithEmailAndPassword(email, password);
+      resetFormFields();
+      console.log(response);
     } catch (error) {
 
     }
@@ -67,7 +70,7 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button buttonType='google' onClick={signInWithGoogle}>Sign In With Google</Button>
+          <Button buttonType='google' onClick={signInWithGoogle}>Google Sign In</Button>
         </div>
       </form>
     </div>
