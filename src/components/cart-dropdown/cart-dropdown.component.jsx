@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
-
 import { CartContext } from '../../contexts/cart.context';
 
 import Button from '../button/button.component';
