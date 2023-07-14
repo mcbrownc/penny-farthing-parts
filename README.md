@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Penny-farthing Parts!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A market for parts for "old" bikes (or Rivendells).  A wheel is a 584mm rotor -- threadless stems solve a problem that never existed with quill stems.  
 
 ## Available Scripts
 
