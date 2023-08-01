@@ -39,7 +39,7 @@ export const CartContext = createContext({
 });
 
 const INITIAL_STATE = {
-  isCartOpen: false,
+  isCartOpen: true,
   cartItems: [],
   cartCount: 0,
   cartTotal: 0,
@@ -95,6 +95,15 @@ export const CartProvider = ({children}) => {
     updateCartItems(newCartItems);
   }
 
-  const value = { isCartOpen, setIsCartOpen, addItemToCart, removeItemFromCart, clearItemFromCart, cartItems, cartCount, cartTotal };
+  const value = { 
+    isCartOpen, 
+    setIsCartOpen: () => {}, 
+    addItemToCart, 
+    removeItemFromCart, 
+    clearItemFromCart, 
+    cartItems, 
+    cartCount, 
+    cartTotal 
+  };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 };
