@@ -10,7 +10,9 @@ import { CategoryContainer, CategoryTitle } from './category.styles';
 
 const Category = () => {
   const { category } = useParams();
+  console.log('before')
   const categoriesMap = useSelector(selectCategoriesMap);
+  console.log('after')
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
