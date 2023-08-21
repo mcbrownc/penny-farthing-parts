@@ -7,16 +7,18 @@ export const setCategories = (categoriesArray) =>
 
 export const fetchCategoriesStart = () => createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START);
 
-export const fetchCategoriesSuccess = (categoriesArray) => createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START, categoriesArray);
+export const fetchCategoriesSuccess = (categoriesArray) => createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_SUCCESS, categoriesArray);
 
 export const fetchCategoriesFailed = (error) => createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error);
 
-export const fetchCategoriesAsync = () => async (dispatch) => {
-    dispatch(fetchCategoriesStart());
-    try {
-        const categoriesArray = await getCategoriesAndDocuments();
-        dispatch(fetchCategoriesSuccess(categoriesArray));
-    } catch (error) {
-        dispatch(fetchCategoriesFailed(error));
+export const fetchCategoriesStartAsync = () => {
+    return async (dispatch) => {
+        dispatch(fetchCategoriesStart());
+        try {
+            const categoriesArray = await getCategoriesAndDocuments();
+            dispatch(fetchCategoriesSuccess(categoriesArray));
+        } catch (error) {
+            dispatch(fetchCategoriesFailed(error));
+        }
     }
 }
