@@ -20,7 +20,6 @@ import {
   getDocs
 } from 'firebase/firestore';
 
-//  Web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyASEu8JQ5SI1hWnd6phgqWai-1qSADkt58",
   authDomain: "crwn-ecommerce-db-9c48d.firebaseapp.com",
@@ -30,7 +29,6 @@ const firebaseConfig = {
   appId: "1:364170267380:web:fcfe0121ad4fd39daf6ca1"
 };
 
-// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
@@ -88,11 +86,6 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
   }
 
   return userDocRef;
-
-  //if user data does not exist
-  // create/set the document with the data from suerAuth in my collection
-  //if user data exists
-  //return userDocReg
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -110,3 +103,16 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangeListener = (callback) => onAuthStateChanged(auth, callback);
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    )
+  })
+}
