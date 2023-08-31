@@ -29,6 +29,16 @@ const firebaseConfig = {
   appId: "1:364170267380:web:fcfe0121ad4fd39daf6ca1"
 };
 
+// NEW CONFIG
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDsQkuinDmaoE1F6MY7nfyiMu7fsbHnmEU",
+//   authDomain: "penny-farthing-db.firebaseapp.com",
+//   projectId: "penny-farthing-db",
+//   storageBucket: "penny-farthing-db.appspot.com",
+//   messagingSenderId: "672298007753",
+//   appId: "1:672298007753:web:8f9dbfe7c9d662048aa118"
+// };
+
 const firebaseApp = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
