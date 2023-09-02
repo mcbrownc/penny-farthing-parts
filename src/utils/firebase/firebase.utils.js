@@ -21,12 +21,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: "AIzaSyDsQkuinDmaoE1F6MY7nfyiMu7fsbHnmEU",
+  authDomain: "penny-farthing-db.firebaseapp.com",
+  projectId: "penny-farthing-db",
+  storageBucket: "penny-farthing-db.appspot.com",
+  messagingSenderId: "672298007753",
+  appId: "1:672298007753:web:8f9dbfe7c9d662048aa118"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
