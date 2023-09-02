@@ -14,7 +14,7 @@ const FormInput: FC<FormInputProps> = ({ label, ...otherProps }) => {
         </FormInputLabel>
       )}
     </Group>
-  )
-}
+  );
+};
 
 export default FormInput;
