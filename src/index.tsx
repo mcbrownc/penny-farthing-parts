@@ -9,7 +9,6 @@ import { stripePromise } from './stripe/stripe.utils';
 import App from './App';
 import { store, persistor } from './store/store';
 
-import './index.scss';
 
 
 
