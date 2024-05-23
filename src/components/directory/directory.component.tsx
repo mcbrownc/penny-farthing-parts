@@ -21,7 +21,7 @@ const categories: DirectoryCategory[] = [
   {
     "id": 2,
     "title": "Stems",
-    "imageUrl": "https://aroundthecycle.com/cdn/shop/products/DSC_0005_fc268dea-7984-4bbe-ae24-73fb06533c09.jpg?v=1677282327&width=1946",
+    "imageUrl": "https://www.retro-gression.com/cdn/shop/products/nitto_young_3-1_1800x.jpg?v=1594420498",
     "route": 'shop/stems',
   },
   {
