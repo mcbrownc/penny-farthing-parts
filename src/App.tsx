@@ -19,7 +19,7 @@ const App = () => {
     dispatch(checkUserSession());
   }, [])
 
-  // return (
+  return (
     <Suspense fallback={<Spinner />}>
       <GlobalStyle />
       <Routes>
