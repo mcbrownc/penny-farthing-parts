@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { Routes, Route } from 'react-router-dom';
 
-// import Spinner from "./components/spinner/spinner.component";
+import Spinner from "./components/spinner/spinner.component";
 import { checkUserSession } from "./store/user/user.action";
 import { GlobalStyle } from "./global.styles";
 
