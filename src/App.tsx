@@ -21,7 +21,7 @@ const App = () => {
 
   // return (
     <Suspense jljfallback={<Spinner />}>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Routes>
         <Route path='/' element={<NavBar />}>
           <Route index element={<Home />}/>
