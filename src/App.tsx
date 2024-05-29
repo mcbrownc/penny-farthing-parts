@@ -19,8 +19,8 @@ const App = () => {
     dispatch(checkUserSession());
   }, [])
 
-  // return (
-    // <Suspense jljfallback={<Spinner />}>
+  return (
+    <Suspense jljfallback={<Spinner />}>
       {/* <GlobalStyle /> */}
       <Routes>
         <Route path='/' element={<NavBar />}>
