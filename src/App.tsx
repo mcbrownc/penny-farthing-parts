@@ -20,7 +20,7 @@ const App = () => {
   }, [])
 
   // return (
-    <Suspense jljfallback={<Spinner />}>
+    // <Suspense jljfallback={<Spinner />}>
       {/* <GlobalStyle /> */}
       <Routes>
         <Route path='/' element={<NavBar />}>
